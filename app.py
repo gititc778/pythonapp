@@ -1,5 +1,8 @@
 from flask import Flask
 import mysql.connector
+import os
+import time
+
  
 app = Flask(__name__)
  
@@ -11,7 +14,10 @@ def get_db_connection():
 	 database="test_db"
  	)
  	return connection
- 
+
+@app.route('/')
+def liveness():
+
 @app.route('/')
 def hello_world():
  	connection = get_db_connection()
