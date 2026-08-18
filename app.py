@@ -19,6 +19,9 @@ def get_db_connection():
 def liveness():
 
 @app.route('/')
+def readiness():
+
+@app.route('/')
 def hello_world():
  	connection = get_db_connection()
  	cursor = connection.cursor()
